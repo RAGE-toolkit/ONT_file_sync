@@ -1,9 +1,8 @@
-# Ont_file_sync
+# ONT_file_sync
 performs rsync on minion raw data directory for the continous file transfer.
 
 ## Setup 
-When dealing with such continous file transfer its better to have the public key from your local machine to be saved on the destination system (remote system). You can set up the password free rsync using the following steps
-
+When dealing with such continuous file transfer its better to have the public key from your local machine to be saved on the destination system (remote system). You can set up the password free rsync using the following steps.
 Generating ssh key
 ```
 ssh-keygen -t rsa -b 4096
@@ -12,7 +11,7 @@ Continue with passphrase (you can leave blank or add passphrase), you can view s
 ```
 less ~/.ssh/id_rsa.pub
 ```
-Save the public key to a file named authorized_keys. Also dont forget to add your local system user_name and host address. Example user123@server_name.organization_name.ac.uk
+Save the public key to a file named authorized_keys. Also don't forget to add your local system user_name and host address. Example user123@server_name.organization_name.ac.uk
 ```
 cat ~/.ssh/id_rsa.pub | ssh username@hostname 'cat >> ~/.ssh/authorized_keys'
 ```
