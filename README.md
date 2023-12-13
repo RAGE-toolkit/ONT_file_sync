@@ -28,3 +28,8 @@ Example command
 python file_sync.py -d /path/to/your/directory/ -d /your/destination/directory -dh server1.organization.ac.uk -du abc123 -t 30
 ```
 In the above command -t 30 indicates the time in minutes. 
+
+#command for live basecalling (script undergoing development)
+```
+python live_basecalling.py -g /export/home4/sk312p/projects/tools/dorado-0.5.0-linux-x64/bin/dorado -b DORADO -i /export/home4/sk312p/projects/tm/ -o /export/home4/sk312p/projects/test.fastq -d hac -t 1 -x cpu
+```
