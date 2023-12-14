@@ -1,5 +1,5 @@
 # live_basecaller.py
-This script calls the basecalling program on a time interval manner to check for the number of sequences acquired by the sequencer machine. 
+This script calls the basecalling program on a time interval manner to check for the number of sequences acquired by the sequencing machine. 
 
 ## Usage instruction
 ### Guppy with GPU psudo command
