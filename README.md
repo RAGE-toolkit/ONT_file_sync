@@ -1,13 +1,13 @@
 # live_basecaller.py
 This script calls the basecalling program on a time interval manner to check for the number of sequences acquired by the sequencer machine. 
 
-## usage instruction
+## Usage instruction
 ### Guppy with GPU psudo command
 ```
 python live_basecalling.py -b GUPPY -g full_path_to_guppy_basecaller -i full_path_to_fast5_directory -o full_path_where_the_basecaller_to_store -d model_name -t 1 -x cuda:0
 ```
--t indicates the time in minutes. For a given time (lets say 30 minutes) the program calls the guppy_basecaller to perform the basecalling. 
--b indicates the basecaller program. This can have two values GUPPY, DORADO
+- t indicates the time in minutes. For a given time (lets say 30 minutes) the program calls the guppy_basecaller to perform the basecalling
+- b indicates the basecaller program. This can have two values GUPPY, DORADO
 
 #### Guppy with GPU example command
 ```
@@ -31,9 +31,8 @@ python live_basecalling.py -g /projects/tools/dorado-0.5.0-linux-x64/bin/dorado 
   -t 30 \
   -x cuda:all
 ```
-# 
-performs rsync on minion raw data directory for the continous file transfer.
-
+# file_sync.py
+performs rsync on the local and remote system.
 ## Setup 
 When dealing with such continuous file transfer its better to have the public key from your local machine to be saved on the destination system (remote system). You can set up the password free rsync using the following steps.
 Generating ssh key
