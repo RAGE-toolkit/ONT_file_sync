@@ -1,4 +1,37 @@
-# ONT_file_sync
+# live_basecaller.py
+This script calls the basecalling program on a time interval manner to check for the number of sequences acquired by the sequencer machine. 
+
+## usage instruction
+### Guppy with GPU psudo command
+```
+python live_basecalling.py -b GUPPY -g full_path_to_guppy_basecaller -i full_path_to_fast5_directory -o full_path_where_the_basecaller_to_store -d model_name -t 1 -x cuda:0
+```
+-t indicates the time in minutes. For a given time (lets say 30 minutes) the program calls the guppy_basecaller to perform the basecalling. 
+-b indicates the basecaller program. This can have two values GUPPY, DORADO
+
+#### Guppy with GPU example command
+```
+python live_basecalling.py -b GUPPY -g /projects/tools/ont-guppy-gpu/bin/guppy_basecaller -i /projects/raw_files/fast5/ -o /projects/results/fastq/ -d dna_r9.4.1_450bps_fast.cfg -t 30 -x cuda:0
+```
+### Guppy with CPU example
+```
+python live_basecalling.py -b GUPPY \
+  -g /export/home4/sk312p/projects/tools/ont-guppy-gpu/bin/guppy_basecaller \
+  -i /export/home4/sk312p/projects/tmp \
+  -o /export/home4/sk312p/projects/tmp1 \
+  -d dna_r9.4.1_450bps_fast.cfg \
+  -t 30 
+```
+#### Dorado with/without GPU
+```
+python live_basecalling.py -g /projects/tools/dorado-0.5.0-linux-x64/bin/dorado \
+  -b DORADO -i /export/home4/sk312p/projects/tm/ \
+  -o /export/home4/sk312p/projects/tmp1/test_no_kit.fastq \
+  -d /projects/tools/dorado-0.5.0-linux-x64/model/dna_r9.4.1_e8_fast@v3.4 \
+  -t 30 \
+  -x cuda:all
+```
+# 
 performs rsync on minion raw data directory for the continous file transfer.
 
 ## Setup 
