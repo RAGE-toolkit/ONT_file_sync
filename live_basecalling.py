@@ -14,6 +14,7 @@ def rsync_transfer(basecaller_path, basecaller, input_dir, output_dir, data_mode
 				f'{input_dir}',
 				'-s',
 				f'{output_dir}',
+				'-x', 
 				f'{gpu}'
 			]
 		else:
@@ -35,8 +36,7 @@ def rsync_transfer(basecaller_path, basecaller, input_dir, output_dir, data_mode
 			f'{input_dir}',
 			'--emit-fastq',
 			'--barcode-both-ends',
-			'-r',
-			'--kit-name EXP-NBD196', 
+			'-r', 
 			'-x',
 			f'{gpu}',
 			'>',
@@ -62,7 +62,7 @@ def rsync_transfer(basecaller_path, basecaller, input_dir, output_dir, data_mode
 			subprocess.run(command, check=True)
 		else:
 			subprocess.run(' '.join(command), check=True, shell=True)
-			subprocess.run(' '.join(cmd), check=True, shell=True)
+			#subprocess.run(' '.join(cmd), check=True, shell=True)
 		print('Basecaller sucessfull!')
 	except subprocess.CalledProcessError as e:
 		print(f'Error during file transfer: {e}')
