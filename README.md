@@ -11,7 +11,13 @@ python live_basecalling.py -b GUPPY -g full_path_to_guppy_basecaller -i full_pat
 
 #### Guppy with GPU example command
 ```
-python live_basecalling.py -b GUPPY -g /projects/tools/ont-guppy-gpu/bin/guppy_basecaller -i /projects/raw_files/fast5/ -o /projects/results/fastq/ -d dna_r9.4.1_450bps_fast.cfg -t 30 -x cuda:0
+python live_basecalling.py -b GUPPY \
+  -g /projects/tools/ont-guppy-gpu/bin/guppy_basecaller \
+  -i /projects/raw_files/fast5/ \
+  -o /projects/results/fastq/ \
+  -d dna_r9.4.1_450bps_fast.cfg \
+  -t 30 \
+  -x cuda:0
 ```
 ### Guppy with CPU example
 ```
