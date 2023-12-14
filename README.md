@@ -4,10 +4,15 @@ This script calls the basecalling program on a time interval manner to check for
 ## Usage instruction
 ### Guppy with GPU psudo command
 ```
-python live_basecalling.py -b GUPPY -g full_path_to_guppy_basecaller -i full_path_to_fast5_directory -o full_path_where_the_basecaller_to_store -d model_name -t 1 -x cuda:0
+python live_basecalling.py -b GUPPY \
+-g full_path_to_guppy_basecaller \
+-i full_path_to_fast5_directory \
+-o full_path_where_the_basecaller_to_store -d model_name \
+-t 1 \
+-x cuda:0
 ```
-- t indicates the time in minutes. For a given time (lets say 30 minutes) the program calls the guppy_basecaller to perform the basecalling
-- b indicates the basecaller program. This can have two values GUPPY, DORADO
+- -t indicates the time in minutes. For a given time (lets say 30 minutes) the program calls the guppy_basecaller iteratively to perform the basecalling
+- -b indicates the basecaller program. This can have two values GUPPY, DORADO
 
 #### Guppy with GPU example command
 ```
@@ -19,7 +24,7 @@ python live_basecalling.py -b GUPPY \
   -t 30 \
   -x cuda:0
 ```
-### Guppy with CPU example
+#### Guppy with CPU example
 ```
 python live_basecalling.py -b GUPPY \
   -g /export/home4/sk312p/projects/tools/ont-guppy-gpu/bin/guppy_basecaller \
